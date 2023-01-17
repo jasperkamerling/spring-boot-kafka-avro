@@ -3,12 +3,14 @@
  */
 package com.kamerling.example.app
 
-import com.kamerling.example.utilities.StringUtils
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import org.springframework.scheduling.annotation.EnableScheduling
 
-import org.apache.commons.text.WordUtils
+@SpringBootApplication
+@EnableScheduling
+class DemoApplication
 
-fun main() {
-    val tokens = StringUtils.split(MessageUtils.getMessage())
-    val result = StringUtils.join(tokens)
-    println(WordUtils.capitalize(result))
+fun main(args: Array<String>) {
+    runApplication<DemoApplication>(*args)
 }
